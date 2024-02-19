@@ -1,10 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) ACE 
-
 import os
 from config import Config
-from pyrogram import Client as ACE , idle
+from pyrogram import Client, idle
 import asyncio, logging
 import tgcrypto
 from pyromod import listen
@@ -26,12 +22,11 @@ logging.basicConfig(
 # Auth Users
 AUTH_USERS = [ int(chat) for chat in Config.AUTH_USERS.split(",") if chat != '']
 
-# Prefixes 
-prefixes = ["/", "~", "?", "!"]
+
 
 plugins = dict(root="plugins")
 if __name__ == "__main__" :
-    AceBot = ACE(
+    AceBot = Client(
         "AceBot",
         bot_token=Config.BOT_TOKEN,
         api_id=Config.API_ID,
