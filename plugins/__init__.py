@@ -29,7 +29,7 @@ async def Start_msg(bot, m: Message):
 
 @Client.on_message(
     filters.user(AUTH_USERS) & filters.private &
-    filters.incoming & filters.command("help", prefixes=prefixes)
+    filters.incoming & filters.command("help")
 )
 async def help_msg(bot, m: Message):   
     await m.reply_text(
