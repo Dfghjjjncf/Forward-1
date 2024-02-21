@@ -12,6 +12,7 @@ async def forward_media(client, message):
             await message.copy(
               chat_id=target_channel,
               caption=f"**{caption}**")
+            time.sleep(4) 
         except Exception as e:
             print(f"Error forwarding message: {e}")
     else:
