@@ -27,7 +27,7 @@ async def forward(bot, m: Message):
                 if msg.video or msg.document:
                     caption = msg.caption if msg.caption else msg.video.file_name if msg.video else msg.document.file_name
                     await msg.copy(t_chat, caption=f"**{caption}**")
-                    time.sleep(4)
+                    time.sleep(10)
             except Exception:
                 continue
     except Exception as e:
